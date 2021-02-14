@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   get '/signup' => 'users#new'
 
+  resources :tweets
+  
   root 'tweets#index'
 
 end

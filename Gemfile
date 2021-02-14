@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
  gem 'simple_form'
+ gem 'gravatar_image_tag', '~> 1.2'
+ gem 'bulma-rails', '~> 0.9.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

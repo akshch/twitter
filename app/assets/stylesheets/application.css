@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+ 
  .text-blue {
   color: #1da1f2 !important;
 }
@@ -21,4 +24,63 @@
   color: #fff;
   background-color: #1da1f2;
   border-color: #1da1f2;
+}
+
+
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */ /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: rgb(48, 45, 45); /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+}
+
+.navv {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.login {
+  margin-top: 100px;
+}
+
+.not {
+  margin-top: 60px;
+}
+
+.right-panel {
+  padding-bottom: 20px;
+}
+
+.cover-img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.section-top {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.user-image{
+  display: inline-block;
+}
+
+.user-avatar-feed{
+  text-align: center;
+}
+
+p.likes-count {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .sticky-sidebar{
+    margin-top: 15px;
+  }
 }

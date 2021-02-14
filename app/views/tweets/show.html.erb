@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class="my-6 mr-0">
+  <p>
+    <strong>Tweet:</strong>
+    <div class="box">
+      <% if @tweet.parent_id %>
+        <div class="pb-2"><b>You Retweeted</b></div>
+      <% end %>
+      <article class="media">
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <div class="gravatar" style="width:64px; height:64px;">
+              <img src="<%= asset_path('default_user.png') %>" />
+            </div>
+          </figure>
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <strong><%= link_to @tweet.user.full_name.capitalize, users_path(@tweet.user) %> </strong><br>
+            <small>@<%= @tweet.user.username %></small>
+          </div>
+          <p class='h4'><i class="fas fa-quote-left pr-2 fa-sm"></i>
+            <%= @tweet.content %>
+            <i class="fas fa-quote-right pl-2 fa-sm"></i>
+          </p>
+          <br>
+          <div class='tweet-comments-section'>
+
+            <p><b>Comments:</b></p>
+          
+            <!--<div class="border rounded p-2">
+              <%#if @tweet.comments.count == 0 %>
+                <div class="text-center"><p class="h6">No Comments yet 😔</p></div>
+              <%# else %>
+                <%#= render partial: 'comments/comment', collection: @tweet.comments %>
+              <%# end %>
+            </div><br>-->
+          </div>
+        </div>
+      </article>
+    </div>
+  <br>
+
+</div>
