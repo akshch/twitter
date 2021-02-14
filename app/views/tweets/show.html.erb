@@ -16,7 +16,7 @@
         </div>
         <div class="media-content">
           <div class="content">
-            <strong><%= link_to @tweet.user.full_name.capitalize, user_path(@tweet.user) %> </strong><br>
+            <strong class="name-color"><%= @tweet.user.full_name.capitalize %> </strong><br>
             <small>@<%= @tweet.user.username %></small>
           </div>
           <p class='h4'><i class="fas fa-quote-left pr-2 fa-sm"></i>
@@ -30,7 +30,7 @@
           
             <div class="border rounded p-2" id="comments-list">
               <% if @tweet.comments.count == 0 %>
-                <div class="text-center"><p class="h6">No Comments yet 😔</p></div>
+                <div class="text-center" id="no-comments"><p class="h6" >No Comments yet</p></div>
               <%  else %>
                 <%= render partial: 'comments/comment', collection: @tweet.comments %>
               <%  end %>
@@ -39,7 +39,7 @@
               <%= f.error_notification %>
               <div class="field">
                 <div class="control">
-                  <%= f.input :content, label: "Tweeet about it", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new tweeet...", autofocus: true %>
+                  <%= f.input :content, label: "Comment about it", input_html: { class: "textarea "}, wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new comment...", autofocus: true %>
                 </div>
               </div>
               <%= f.button :submit, "Tweet", class: "button is-info" %>

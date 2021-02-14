@@ -1,0 +1,23 @@
+<div class="box">
+  	<article class="media">
+  		<div class="media-left">
+  			<figure class="image is-64x64">
+  				<%= gravatar_image_tag(tweet.user.email, size: 64, alt: tweet.user.full_name) %>
+  			</figure>
+  		</div>
+  		<div class="media-content">
+  			<div class="content">
+  				<strong><%= tweet.user.full_name %></strong> - <%= tweet.created_at.strftime('%d %B %Y') %><br />
+  				<small><%= tweet.user.username %></small><br/>
+  				<p><%= tweet.content %></p>
+  			</div>
+  			<nav class="level">
+  				<div class="level-left is-mobile">
+            <%= comment_btn_feed(tweet) %>
+            <%= retweet_btn_feed(tweet) %>
+            <%= like_btn_feed(tweet) %>
+  				</div>
+  			</nav>
+  		</div>
+  	</article>
+  </div>

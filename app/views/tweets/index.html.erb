@@ -4,11 +4,11 @@
     	<% if current_user.present? %>
     		<%= render 'profile' %>
     	<% else %>
-       <%= render 'trends' %>
+      <div class="column is-one-quarter">
+      </div>
       <% end %>
 
        <%= render 'feed' %>
-       <%= render 'who-to-follow' %>
     </div>
   </div>
 </section>

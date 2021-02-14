@@ -84,3 +84,15 @@ p.likes-count {
     margin-top: 15px;
   }
 }
+
+.nav-bg-light {
+  background-color: #00acee !important;
+}
+
+.login-btn-bg-color {
+  background-color: #1991DA !important;
+}
+
+.name-color {
+  color: #0056B3
+}

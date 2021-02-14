@@ -4,7 +4,7 @@ module CommentsHelper
   end
 
   def comment_btn_feed(tweet)
-    if current_user.present? && tweet.user != current_user && tweet.comments.blank?
+    if current_user.present? && tweet.comments.blank?
       link_to tweet, class: "level-item" do
   			raw("<span class='icon'><i class='far fa-comment' aria-hidden='true' ></i></span>")
   	  end

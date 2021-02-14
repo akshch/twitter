@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   before_action :user_login, except: %I[index show]
 
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.all.order('created_at DESC').includes(%i[user comments])
     @tweet = Tweet.new
   end
 
@@ -24,6 +24,18 @@ class TweetsController < ApplicationController
   def destroy
     @tweet.destroy
     redirect_to tweets_url, notice: 'Tweet was successfully destroyed.'
+  end
+
+  def retweet
+    @retweet = Tweet.new(content: @tweet.content, parent_id: @tweet.id, user_id: current_user.id)
+    if @retweet.save
+    redirect_to root_path, notice: 'Retweet was successfully created.'
+    else
+      render(
+        html: "<script>alert('Some Problem occured!')</script>".html_safe,
+        layout: 'application'
+      )
+    end
   end
 
   private

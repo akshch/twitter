@@ -12,33 +12,12 @@
 					<div class="content">
 						<p>
 							<strong><%= current_user.full_name %></strong><br />
-							<small><%= current_user.username %></small>
+							<small><%= current_user.username %></small><br />
+              <small>Active since <%= current_user.created_at.strftime('%d %b %Y') %></small>
 						</p>
 					</div>
 				</div>
 			</article>
-		</div>
-		<div class="panel-block">
-			<div class="level is-mobile">
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Tweeets</p>
-						<p class="title is-6"><%= current_user.tweets.count %></p>
-					</div>
-				</div>
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Following</p>
-						<p class="title is-6">123</p>
-					</div>
-				</div>
-					<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Followers</p>
-						<p class="title is-6">465K</p>
-					</div>
-				</div>
-			</div>
 		</div>
 	</nav>
 </div>
