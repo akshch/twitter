@@ -3,5 +3,6 @@ class Tweet < ApplicationRecord
   too_long: '1000 characters in post is the maximum allowed.', minimum: 3 }
 
  belongs_to :user, foreign_key: :user_id
+ has_many :comments, dependent: :destroy
 
 end

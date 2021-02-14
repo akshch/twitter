@@ -1,0 +1,8 @@
+<% if @error %>
+  swal("Something went wrong!, try after sometime");
+<% else %>
+  $('#no-comment').html("<p class='h6'>Yeah, thanks for response 🥳</p>");
+  $('#comments-list').append("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
+  swal("Comment added successfully!");
+  $('#comment_content').val('');
+<% end %>
