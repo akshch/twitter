@@ -8,7 +8,7 @@
   		<div class="media-content">
   			<div class="content">
   				<strong><%= tweet.user.full_name %></strong> - <%= tweet.created_at.strftime('%d %B %Y') %><br />
-  				<small><%= tweet.user.username %></small><br/>
+  				<small>@<%= tweet.user.username %></small><br/>
   				<p><%= link_to tweet.content, tweet %></p>
   			</div>
   			<nav class="level">
